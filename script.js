@@ -16,8 +16,8 @@ class Player {
   // CURRENTLY NOT WORKING AS INTENDED
 
   move() {
-    this.x = lerp(x, mouseX, 0.05);
-    this.y = lerp(y, mouseY, 0.05);
+    this.x = lerp(this.x, mouseX, 0.07);
+    this.y = lerp(this.y, mouseY, 0.07);
   }
 }
 
