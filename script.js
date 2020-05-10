@@ -70,6 +70,12 @@ function ballHit() {
         }
         balls.splice(hitBall, 1);
       }
+      if (balls.length < 50) {
+        for (let i = 0; i < 1; i++) {
+          ball = new Balls();
+          balls.push(ball);
+        }
+      }
     }
   }
 }
