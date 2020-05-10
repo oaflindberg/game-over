@@ -1,6 +1,7 @@
 let x = 0;
 let y = 0;
 let size = 10;
+let velocity = 0.15;
 let balls = [];
 
 class Player {
@@ -8,6 +9,7 @@ class Player {
     this.x = x;
     this.y = y;
     this.size = size;
+    this.velocity = velocity;
   }
 
   show() {
@@ -16,8 +18,8 @@ class Player {
   }
 
   move() {
-    this.x = lerp(this.x, mouseX, 0.25);
-    this.y = lerp(this.y, mouseY, 0.25);
+    this.x = lerp(this.x, mouseX, this.velocity);
+    this.y = lerp(this.y, mouseY, this.velocity);
   }
 }
 
@@ -52,17 +54,23 @@ function draw() {
   for (let i = 0; i < balls.length; i++) {
     balls[i].show();
   }
+  cursor("none");
   ballHit();
 }
 
 // ! FUNCTION TO CHECK IF A BALL HAS BEEN HIT AND IF HIT REMOVE IT AND MAKE PLAYER BIGGER, NOT WORKING PROPERLY YET.
 function ballHit() {
-  balls.forEach((ball) => {
-    let distance = dist(ball.x, ball.y, player.x, player.y);
-    if (distance < ball.size / 2) {
-      console.log("wow");
-      size = player.size++;
-      balls.splice(ball, 1);
+  for (let i = 0; i < balls.length; i++) {
+    let distance = dist(balls[i].x, balls[i].y, player.x, player.y);
+    if (distance - player.size / 2 < balls[i].size / 4) {
+      let hitBall = balls.indexOf(balls[i]);
+      if (hitBall > -1) {
+        size = player.size += 1;
+        if (velocity > 0.03) {
+          velocity = player.velocity -= 0.0002;
+        }
+        balls.splice(hitBall, 1);
+      }
     }
-  });
+  }
 }
