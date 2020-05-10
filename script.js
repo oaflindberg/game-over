@@ -16,8 +16,8 @@ class Player {
   // CURRENTLY NOT WORKING AS INTENDED
 
   move() {
-    this.x = lerp(this.x, mouseX, 0.07);
-    this.y = lerp(this.y, mouseY, 0.07);
+    this.x = lerp(this.x, mouseX, 0.5);
+    this.y = lerp(this.y, mouseY, 0.5);
   }
 }
 
@@ -48,6 +48,7 @@ function setup() {
 
 function draw() {
   background(0);
+  translate(-width / 2, -height / 2, 0);
   player.show();
   player.move();
   for (let i = 0; i < balls.length; i++) {
