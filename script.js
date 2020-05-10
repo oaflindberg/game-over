@@ -58,7 +58,6 @@ function draw() {
   ballHit();
 }
 
-// ! FUNCTION TO CHECK IF A BALL HAS BEEN HIT AND IF HIT REMOVE IT AND MAKE PLAYER BIGGER, NOT WORKING PROPERLY YET.
 function ballHit() {
   for (let i = 0; i < balls.length; i++) {
     let distance = dist(balls[i].x, balls[i].y, player.x, player.y);
