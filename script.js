@@ -14,8 +14,10 @@ class Player {
   }
 
   show() {
-    circle(this.x, this.y, size);
+    push();
     fill(23, 187, 233);
+    circle(this.x, this.y, size);
+    pop();
   }
 
   move() {
@@ -32,8 +34,10 @@ class Balls {
   }
 
   show() {
-    circle(this.x, this.y, this.size);
+    push();
     fill(55, 251, 55);
+    circle(this.x, this.y, this.size);
+    pop();
   }
 }
 
@@ -45,8 +49,10 @@ class Bomb {
   }
 
   show() {
-    circle(this.x, this.y, this.size);
+    push();
     fill(255, 0, 0);
+    circle(this.x, this.y, this.size);
+    pop();
   }
 }
 
@@ -75,14 +81,10 @@ function draw() {
   for (let i = 0; i < bombs.length; i++) {
     push();
     bombs[i].show();
-    pop();
   }
-  push();
   player.show();
   player.move();
   cursor("none");
-  push();
-  bomb.show();
   bombHit();
   ballHit();
 }
