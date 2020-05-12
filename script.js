@@ -60,28 +60,24 @@ function setup() {
   createCanvas(window.innerWidth, window.innerHeight, WEBGL);
   noStroke();
   player = new Player();
-  // for (let i = 0; i < 5; i++) {
-  //   bomb = new Bomb();
-  //   bombs.push(bomb);
-  // }
+
   for (let i = 0; i < 50; i++) {
     ball = new Balls();
     balls.push(ball);
   }
 }
-// WORK IN PROGRESS
+
 function drawBombs() {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 1; i++) {
     bomb = new Bomb();
-    bombs.push(bomb);
+    if (bombs.length <= 9) {
+      bombs.push(bomb);
+    }
   }
 }
 
 setInterval(drawBombs, Math.random() * 10000 + 1000);
-// NOT WORKING
-if (bombs >= 10) {
-  clearInterval(drawBombs);
-}
+clearInterval(drawBombs);
 
 function draw() {
   background(0);
@@ -132,12 +128,6 @@ function bombHit() {
       size = player.size / 2;
       if (hitBomb > -1) {
         bombs.splice(hitBomb, 1);
-      }
-    }
-    if (bombs.length < 5) {
-      for (let i = 0; i < 1; i++) {
-        bomb = new Bomb();
-        bombs.push(bomb);
       }
     }
   }
