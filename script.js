@@ -125,6 +125,7 @@ function bombHit() {
     let distance = dist(bombs[i].x, bombs[i].y, player.x, player.y);
     if (distance - player.size / 2 < bombs[i].size / 4) {
       let hitBomb = bombs.indexOf(bombs[i]);
+      // NEEDS FIXING
       size = player.size / 2;
       if (hitBomb > -1) {
         bombs.splice(hitBomb, 1);
