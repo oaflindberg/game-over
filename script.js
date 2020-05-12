@@ -4,6 +4,7 @@ let size = 10;
 let velocity = 0.15;
 let balls = [];
 let bombs = [];
+let score = 0;
 
 class Player {
   constructor() {
@@ -96,12 +97,30 @@ function draw() {
   cursor("none");
   bombHit();
   ballHit();
+  console.log(score);
+}
+
+function bombHit() {
+  for (let i = 0; i < bombs.length; i++) {
+    let distance = dist(bombs[i].x, bombs[i].y, player.x, player.y);
+    if (distance - size / 2 < bombs[i].size / 2) {
+      // NEEDS FIXING
+      if (size >= 5) {
+        size = player.size /= 2;
+      }
+      let hitBomb = bombs.indexOf(bombs[i]);
+      if (hitBomb > -1) {
+        bombs.splice(hitBomb, 1);
+      }
+      score = score - 5;
+    }
+  }
 }
 
 function ballHit() {
   for (let i = 0; i < balls.length; i++) {
     let distance = dist(balls[i].x, balls[i].y, player.x, player.y);
-    if (distance - player.size / 2 < balls[i].size / 4) {
+    if (distance - size / 2 < balls[i].size / 2) {
       size = player.size += 1;
       if (velocity > 0.03) {
         velocity = player.velocity -= 0.0002;
@@ -114,20 +133,8 @@ function ballHit() {
         for (let i = 0; i < 1; i++) {
           ball = new Balls();
           balls.push(ball);
+          score = score + 1;
         }
-      }
-    }
-  }
-}
-
-function bombHit() {
-  for (let i = 0; i < bombs.length; i++) {
-    let distance = dist(bombs[i].x, bombs[i].y, player.x, player.y);
-    if (distance - player.size / 2 < bombs[i].size / 4) {
-      let hitBomb = bombs.indexOf(bombs[i]);
-      size = player.size / 2;
-      if (hitBomb > -1) {
-        bombs.splice(hitBomb, 1);
       }
     }
   }
