@@ -60,28 +60,24 @@ function setup() {
   createCanvas(window.innerWidth, window.innerHeight, WEBGL);
   noStroke();
   player = new Player();
-  // for (let i = 0; i < 5; i++) {
-  //   bomb = new Bomb();
-  //   bombs.push(bomb);
-  // }
+
   for (let i = 0; i < 50; i++) {
     ball = new Balls();
     balls.push(ball);
   }
 }
-// WORK IN PROGRESS
+
 function drawBombs() {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 1; i++) {
     bomb = new Bomb();
-    bombs.push(bomb);
+    if (bombs.length <= 9) {
+      bombs.push(bomb);
+    }
   }
 }
 
 setInterval(drawBombs, Math.random() * 10000 + 1000);
-// NOT WORKING
-if (bombs >= 10) {
-  clearInterval(drawBombs);
-}
+clearInterval(drawBombs);
 
 function draw() {
   background(0);
@@ -102,10 +98,26 @@ function draw() {
   ballHit();
 }
 
+function bombHit() {
+  for (let i = 0; i < bombs.length; i++) {
+    let distance = dist(bombs[i].x, bombs[i].y, player.x, player.y);
+    if (distance - size / 2 < bombs[i].size / 2) {
+      // NEEDS FIXING
+      if (size >= 5) {
+        size = player.size /= 2;
+      }
+      let hitBomb = bombs.indexOf(bombs[i]);
+      if (hitBomb > -1) {
+        bombs.splice(hitBomb, 1);
+      }
+    }
+  }
+}
+
 function ballHit() {
   for (let i = 0; i < balls.length; i++) {
     let distance = dist(balls[i].x, balls[i].y, player.x, player.y);
-    if (distance - player.size / 2 < balls[i].size / 4) {
+    if (distance - size / 2 < balls[i].size / 2) {
       size = player.size += 1;
       if (velocity > 0.03) {
         velocity = player.velocity -= 0.0002;
@@ -119,25 +131,6 @@ function ballHit() {
           ball = new Balls();
           balls.push(ball);
         }
-      }
-    }
-  }
-}
-
-function bombHit() {
-  for (let i = 0; i < bombs.length; i++) {
-    let distance = dist(bombs[i].x, bombs[i].y, player.x, player.y);
-    if (distance - player.size / 2 < bombs[i].size / 4) {
-      let hitBomb = bombs.indexOf(bombs[i]);
-      size = player.size / 2;
-      if (hitBomb > -1) {
-        bombs.splice(hitBomb, 1);
-      }
-    }
-    if (bombs.length < 5) {
-      for (let i = 0; i < 1; i++) {
-        bomb = new Bomb();
-        bombs.push(bomb);
       }
     }
   }
