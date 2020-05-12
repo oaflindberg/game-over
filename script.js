@@ -4,6 +4,7 @@ let size = 10;
 let velocity = 0.15;
 let balls = [];
 let bombs = [];
+let score = 0;
 
 class Player {
   constructor() {
@@ -96,6 +97,7 @@ function draw() {
   cursor("none");
   bombHit();
   ballHit();
+  console.log(score);
 }
 
 function bombHit() {
@@ -110,6 +112,7 @@ function bombHit() {
       if (hitBomb > -1) {
         bombs.splice(hitBomb, 1);
       }
+      score = score - 5;
     }
   }
 }
@@ -130,6 +133,7 @@ function ballHit() {
         for (let i = 0; i < 1; i++) {
           ball = new Balls();
           balls.push(ball);
+          score = score + 1;
         }
       }
     }
