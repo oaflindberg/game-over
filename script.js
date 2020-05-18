@@ -9,6 +9,7 @@ let bombs = [];
 let score = 0;
 let particles = [];
 let operator = [true, false, true, false, true, false, true, false];
+let scl = 3;
 
 class Player {
   constructor() {
@@ -16,13 +17,29 @@ class Player {
     this.y = y;
     this.size = size;
     this.velocity = velocity;
+    this.xspeed = 1;
+    this.yspeed = 0;
+    this.angle = (Math.floor(Math.random() * 8 + 1) * Math.PI) / 4;
   }
 
   show() {
     push();
     fill(23, 187, 233);
-    circle(this.x, this.y, this.size);
+    circle(this.x, this.y, this.size, scl, scl);
     pop();
+  }
+
+  update() {
+    this.x = this.x + this.xspeed * scl;
+    this.y = this.y + this.yspeed * scl;
+
+    this.x = constrain(this.x, 0, width - scl);
+    this.y = constrain(this.y, 0, height - scl);
+  }
+
+  dir(x, y) {
+    this.xspeed = x;
+    this.yspeed = y;
   }
 
   move() {
@@ -89,6 +106,14 @@ class Bomb {
   }
 }
 
+function keyPressed() {
+  if (keyCode === RIGHT_ARROW) {
+    player.dir(1, 0);
+  } else if (keyCode === LEFT_ARROW) {
+    player.dir(-1, 0);
+  }
+}
+
 function drawParticles() {
   for (let i = 0; i < 10; i++) {
     particle = new Particles();
@@ -115,6 +140,8 @@ function drawBombs() {
       bombs.push(bomb);
     }
   }
+
+  console.log(size);
 }
 
 setInterval(drawBombs, Math.random() * 10000 + 1000);
@@ -136,7 +163,8 @@ function draw() {
     pop();
   }
   player.show();
-  player.move();
+  // player.move();
+  player.update();
   cursor("none");
   bombHit();
   ballHit();
