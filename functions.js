@@ -10,13 +10,6 @@ function keyPressed() {
   }
 }
 
-function drawParticles() {
-  for (let i = 0; i < 10; i++) {
-    particle = new Particles();
-    particles.push(particle);
-  }
-}
-
 function drawBombs() {
   for (let i = 0; i < 1; i++) {
     bomb = new Bomb();
@@ -24,21 +17,16 @@ function drawBombs() {
       bombs.push(bomb);
     }
   }
-
-  console.log(size);
 }
+
+setInterval(drawBombs, Math.random() * 10000 + 1000);
+clearInterval(drawBombs);
 
 function bombHit() {
   for (let i = 0; i < bombs.length; i++) {
     let distance = dist(bombs[i].x, bombs[i].y, player.x, player.y);
     if (distance - size / 2 < bombs[i].size / 2) {
       score = score - 5;
-
-      for (let i = 0; i < particles.length; i++) {
-        particles[i].show();
-        particles[i].x = particles[i].velocity * particles[i].random();
-        particles[i].y = particles[i].velocity * particles[i].random();
-      }
 
       if (size >= 5) {
         size = player.size /= 2;
