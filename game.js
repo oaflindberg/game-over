@@ -7,7 +7,6 @@ function setup() {
     ball = new Balls();
     balls.push(ball);
   }
-  drawParticles();
 }
 
 function draw() {
