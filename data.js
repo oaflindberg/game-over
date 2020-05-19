@@ -12,3 +12,5 @@ let operator = [true, false, true, false, true, false, true, false];
 let scl = 3;
 let diameter;
 let angle = 0;
+
+const scoreEl = document.querySelector(".score");

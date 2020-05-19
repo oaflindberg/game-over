@@ -31,5 +31,5 @@ function draw() {
   cursor("none");
   bombHit();
   ballHit();
-  console.log(score);
+  scoreEl.innerText = score;
 }
