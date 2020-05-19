@@ -24,6 +24,18 @@ function draw() {
     bombs[i].show();
     pop();
   }
+
+  // ! THIS NEEDS TO BE SOLVED IN A BETTER WAY.
+  if (player.size > 500) {
+    player.size = player.size / 2;
+    for (let i = 0; i < balls.length; i++) {
+      balls[i].size = balls[i].size / 2;
+    }
+    for (let i = 0; i < bombs.length; i++) {
+      bombs[i].size = bombs[i].size / 2;
+    }
+  }
+
   player.show();
   // player.move();
   player.update();
