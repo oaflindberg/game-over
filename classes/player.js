@@ -17,7 +17,7 @@ class Player {
   }
 
   move() {
-    this.x = lerp(this.x, mouseX, 0.003);
-    this.y = lerp(this.y, mouseY, 0.003);
+    this.x = lerp(this.x, mouseX, 0.007);
+    this.y = lerp(this.y, mouseY, 0.007);
   }
 }
