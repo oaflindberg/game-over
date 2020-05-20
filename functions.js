@@ -1,8 +1,10 @@
 function drawBombs() {
-  for (let i = 0; i < 1; i++) {
-    bomb = new Bomb();
-    if (bombs.length <= 9) {
-      bombs.push(bomb);
+  if (menu.classList.contains("hidden")) {
+    for (let i = 0; i < 1; i++) {
+      bomb = new Bomb();
+      if (bombs.length <= 9) {
+        bombs.push(bomb);
+      }
     }
   }
 }

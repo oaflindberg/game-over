@@ -41,8 +41,13 @@ function draw() {
   }
 
   player.show();
-  player.move();
-  cursor("none");
+  cursor("default");
+  if (menu.classList.contains("hidden")) {
+    player.move();
+    cursor("none");
+  }
+  //   player.move();
+  //   cursor("none");
   bombHit();
   ballHit();
   scoreEl.innerText = score;
