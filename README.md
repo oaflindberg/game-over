@@ -19,6 +19,27 @@ We have created a game that is an easier and more simple version of the popular 
 
 <img src="https://i.imgur.com/sQf59dZ.png" width="100%">
 
+## Pull requests
+
+* https://github.com/oaflindberg/game-over/pull/1
+* https://github.com/oaflindberg/game-over/pull/2
+* https://github.com/oaflindberg/game-over/pull/3
+* https://github.com/oaflindberg/game-over/pull/4
+* https://github.com/oaflindberg/game-over/pull/5
+* https://github.com/oaflindberg/game-over/pull/6
+* https://github.com/oaflindberg/game-over/pull/7
+* https://github.com/oaflindberg/game-over/pull/8
+* https://github.com/oaflindberg/game-over/pull/9
+* https://github.com/oaflindberg/game-over/pull/10
+* https://github.com/oaflindberg/game-over/pull/11
+* https://github.com/oaflindberg/game-over/pull/12
+* https://github.com/oaflindberg/game-over/pull/13
+* https://github.com/oaflindberg/game-over/pull/14
+* https://github.com/oaflindberg/game-over/pull/15
+* https://github.com/oaflindberg/game-over/pull/16
+* https://github.com/oaflindberg/game-over/pull/17
+
+
 ## Testers
 
 * Person 1
