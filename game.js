@@ -41,8 +41,7 @@ function draw() {
   }
 
   player.show();
-  //   player.move();
-  player.update();
+  player.move();
   cursor("none");
   bombHit();
   ballHit();

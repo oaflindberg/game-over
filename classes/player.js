@@ -16,21 +16,8 @@ class Player {
     pop();
   }
 
-  update() {
-    this.x = this.x + this.xspeed * scl;
-    this.y = this.y + this.yspeed * scl;
-
-    this.x = constrain(this.x, 0, width - scl);
-    this.y = constrain(this.y, 0, height - scl);
-  }
-
-  dir(x, y) {
-    this.xspeed = x;
-    this.yspeed = y;
-  }
-
   move() {
-    this.x = lerp(this.x, mouseX, this.velocity);
-    this.y = lerp(this.y, mouseY, this.velocity);
+    this.x = lerp(this.x, mouseX, 0.003);
+    this.y = lerp(this.y, mouseY, 0.003);
   }
 }
