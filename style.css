@@ -8,6 +8,10 @@
   padding: 0;
 }
 
+body {
+  max-height: 100vh;
+}
+
 div {
   font-family: "Lato", sans-serif;
   position: absolute;
@@ -21,4 +25,5 @@ div {
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
 }

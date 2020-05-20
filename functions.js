@@ -27,7 +27,6 @@ function bombHit() {
     let distance = dist(bombs[i].x, bombs[i].y, player.x, player.y);
     if (distance - size / 2 < bombs[i].size / 2) {
       score = score - 5;
-
       if (size >= 5) {
         size = player.size /= 2;
       }

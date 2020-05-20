@@ -26,18 +26,22 @@ function draw() {
   }
 
   // ! THIS NEEDS TO BE SOLVED IN A BETTER WAY.
-  if (player.size > 500) {
+  if (player.size > 50) {
     player.size = player.size / 2;
     for (let i = 0; i < balls.length; i++) {
-      balls[i].size = balls[i].size / 2;
+      if (balls[i].size > 15) {
+        balls[i].size = balls[i].size / 2;
+      }
     }
     for (let i = 0; i < bombs.length; i++) {
-      bombs[i].size = bombs[i].size / 2;
+      if (bombs[i].size > 15) {
+        bombs[i].size = bombs[i].size / 2;
+      }
     }
   }
 
   player.show();
-  // player.move();
+  //   player.move();
   player.update();
   cursor("none");
   bombHit();
