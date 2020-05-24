@@ -55,8 +55,8 @@ We have created a game that is an easier and more simple version of the popular 
 
 * Jasmine Vestberg
 * Matilda Lindberg
-* Person 5
-* Person 6 
+* Alina Sjöblom
+* Filip Dahlgren
 
 ## Code review
 
