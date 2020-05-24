@@ -46,8 +46,6 @@ function draw() {
     player.move();
     cursor("none");
   }
-  //   player.move();
-  //   cursor("none");
   bombHit();
   ballHit();
   scoreEl.innerText = score;
