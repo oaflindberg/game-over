@@ -38,14 +38,23 @@ We have created a game that is an easier and more simple version of the popular 
 * https://github.com/oaflindberg/game-over/pull/15
 * https://github.com/oaflindberg/game-over/pull/16
 * https://github.com/oaflindberg/game-over/pull/17
+* https://github.com/oaflindberg/game-over/pull/18
+* https://github.com/oaflindberg/game-over/pull/19
+* https://github.com/oaflindberg/game-over/pull/20
+* https://github.com/oaflindberg/game-over/pull/21
+* https://github.com/oaflindberg/game-over/pull/22
+* https://github.com/oaflindberg/game-over/pull/23
 
 
 ## Testers
 
-* Person 1
-* Person 2
-* Person 3
-* Person 4
+* Group 3 ([Betsy](https://github.com/milliebase) & [Viktor](https://github.com/Vpuke))
+* Group 12 ([Dominic](https://github.com/AltDom) & [Jesper](https://github.com/jesperlndqvst))
+
+### People without any coding knowledge
+
+* Jasmine Vestberg
+* Matilda Lindberg
 * Person 5
 * Person 6 
 

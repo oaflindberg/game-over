@@ -26,7 +26,7 @@ function draw() {
   }
 
   // ! THIS NEEDS TO BE SOLVED IN A BETTER WAY.
-  if (player.size > 50) {
+  if (player.size > 500) {
     player.size = player.size / 2;
     for (let i = 0; i < balls.length; i++) {
       if (balls[i].size > 15) {
