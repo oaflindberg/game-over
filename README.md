@@ -15,11 +15,21 @@ We have created a game that is an easier and more simple version of the popular 
 * CSS
 * [p5.js](https://p5js.org/)
 
+## Installation
+
+* Clone this repository 
+
+    `` git clone git@github.com:oaflindberg/game-over.git ``
+
+* Open index.html in your browser of choice.
+
 ## Preview
 
 <img src="https://i.imgur.com/sQf59dZ.png" width="100%">
 
 ## Pull requests
+<details>
+<summary> Click to expand </summary>
 
 * https://github.com/oaflindberg/game-over/pull/1
 * https://github.com/oaflindberg/game-over/pull/2
@@ -44,6 +54,10 @@ We have created a game that is an easier and more simple version of the popular 
 * https://github.com/oaflindberg/game-over/pull/21
 * https://github.com/oaflindberg/game-over/pull/22
 * https://github.com/oaflindberg/game-over/pull/23
+* https://github.com/oaflindberg/game-over/pull/24
+* https://github.com/oaflindberg/game-over/pull/25
+* https://github.com/oaflindberg/game-over/pull/26
+</details>
 
 
 ## Testers
@@ -62,9 +76,9 @@ We have created a game that is an easier and more simple version of the popular 
 
 - [ ] `game.js:17-26` - You could do a function with only one for-loop for a more DRY code.
 - [ ] `game.js:30-41` - This could also be made as a function.
-- [ ] `README.md` - Some kind of installation guide if you want to try the project locally.
+- [x] `README.md` - Some kind of installation guide if you want to try the project locally.
 - [ ] `Classes` -  We really like that you separated the classes, clean structure.
-- [ ] `Script.js:6` - 'e' is redundant in that function.
+- [x] `Script.js:6` - 'e' is redundant in that function.
 - [ ] Would be cool if you could loose the game when you're super tiny.
 
 Cool game and nice work!! 
