@@ -60,7 +60,14 @@ We have created a game that is an easier and more simple version of the popular 
 
 ## Code review
 
-CODE REVIEW HERE PLZ BETSY AND VIKTOR.
+- [ ] `game.js:17-26` - You could do a function with only one for-loop for a more DRY code.
+- [ ] `game.js:30-41` - This could also be made as a function.
+- [ ] `README.md` - Some kind of installation guide if you want to try the project locally.
+- [ ] `Classes` -  We really like that you separated the classes, clean structure.
+- [ ] `Script.js:6` - 'e' is redundant in that function.
+- [ ] Would be cool if you could loose the game when you're super tiny.
+
+Cool game and nice work!! 
 
 ## Authors
 * [Viktor Sjöblom](https://github.com/ViktorSjoblom)
